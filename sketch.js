@@ -1,21 +1,24 @@
+// making name spacing
 const Engine = Matter.Engine;
 const World= Matter.World;
 const Bodies = Matter.Bodies;
-
+// objects
 var engine, world;
 var box1, pig1;
 var backgroundImg,platform;
 
 function preload() {
+    //background image
     backgroundImg = loadImage("sprites/bg.png");
 }
 
 function setup(){
+    
     var canvas = createCanvas(1200,400);
     engine = Engine.create();
     world = engine.world;
 
-
+    //using class to make objects
     ground = new Ground(600,height,1200,20);
     platform = new Ground(150, 305, 300, 170);
 
@@ -44,6 +47,7 @@ function draw(){
     console.log(box2.body.position.x);
     console.log(box2.body.position.y);
     console.log(box2.body.angle);
+    //displaying everything
     box1.display();
     box2.display();
     ground.display();
